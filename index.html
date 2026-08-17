@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Jardin | Alta Gastronomia & Bar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            /* Fundo escuro imersivo com uma imagem de restaurante luxuoso e atmosfera acolhedora */
+            background: linear-gradient(rgba(10, 15, 26, 0.82), rgba(10, 15, 26, 0.94)), 
+                        url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(22, 30, 49, 0.85);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 30px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        /* Capa / Banner do Restaurante */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 210px;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(22, 30, 49, 1) 0%, rgba(22, 30, 49, 0.2) 70%);
+        }
+
+        .header-content {
+            position: relative;
+            text-align: center;
+            padding: 0 20px 20px 20px;
+            margin-top: -45px;
+        }
+
+        .logo-badge {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+            border: 3px solid #161e31;
+            margin-bottom: 12px;
+        }
+
+        .header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #fef08a;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-content p {
+            font-size: 13px;
+            color: #94a3b8;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Corpo do Site */
+        .content {
+            padding: 0 24px 24px 24px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fef08a;
+            margin: 25px 0 14px 4px;
+            border-left: 3px solid #fef08a;
+            padding-left: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Cards do Menu */
+        .menu-card {
+            background: rgba(15, 22, 36, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .menu-details {
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .menu-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .menu-info p {
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fef08a;
+        }
+
+        .btn-order {
+            background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+            color: #0f172a;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: filter 0.2s, transform 0.1s;
+        }
+
+        .btn-order:hover {
+            filter: brightness(1.15);
+        }
+
+        .btn-order:active {
+            transform: scale(0.97);
+        }
+
+        /* Caixa de Informações e Experiência */
+        .experience-box {
+            background: rgba(15, 22, 36, 0.6);
+            border: 1px dashed rgba(212, 175, 55, 0.3);
+            border-radius: 18px;
+            padding: 18px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .experience-box p {
+            font-size: 12px;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        /* Rodapé */
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 25px;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Imagem de Capa do Restaurante -->
+    <div class="hero-banner">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Ambiente do Le Jardin">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <!-- Cabeçalho e Informações Principais -->
+    <div class="header-content">
+        <div class="logo-badge">🍷</div>
+        <h1>Le Jardin Bistrô</h1>
+        <p>A harmonia perfeita entre sabor, sofisticação e arte</p>
+        <div class="status-badge">● Aberto • Reservas & Pedidos</div>
+    </div>
+
+    <div class="content">
+        <div class="section-title">Especialidades do Chef</div>
+
+        <!-- Prato 1 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Medalhão ao Molho Trufado" class="menu-img">
+            <div class="menu-details">
+                <div class="menu-info">
+                    <h3>Medalhão ao Molho Trufado</h3>
+                    <p>Filé mignon alto grelhado, risoto de parmesão cremoso e reducción de vinho tinto.</p>
+                    <div class="price">R$ 94,90</div>
+                </div>
+                <a href="https://wa.me/5512999999999?text=Olá!%20Gostaria%20de%20pedir%20ou%20reservar%20o%20Medalhão%20ao%20Molho%20Trufado." target="_blank" class="btn-order">Pedir ➔</a>
+            </div>
+        </div>
+
+        <!-- Prato 2 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="Salmão com Ervas Finas" class="menu-img">
+            <div class="menu-details">
+                <div class="menu-info">
+                    <h3>Salmão Grelhado na Manteiga</h3>
+                    <p>Posta fresca de salmão com crosta de ervas finas, alcaparras e aspargos salteados.</p>
+                    <div class="price">R$ 88,00</div>
+                </div>
+                <a href="https://wa.me/5512999999999?text=Olá!%20Gostaria%20de%20pedir%20o%20Salmão%20Grelhado." target="_blank" class="btn-order">Pedir ➔</a>
+            </div>
+        </div>
+
+        <div class="section-title">Sobremesas & Doces</div>
+
+        <!-- Prato 3 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Petit Gâteau Belga" class="menu-img">
+            <div class="menu-details">
+                <div class="menu-info">
+                    <h3>Petit Gâteau Belga</h3>
+                    <p>Bolo cremoso de chocolate 70% cacau acompanhado de gelato artesanal de baunilha.</p>
+                    <div class="price">R$ 32,50</div>
+                </div>
+                <a href="https://wa.me/5512999999999?text=Olá!%20Gostaria%20de%20pedir%20o%20Petit%20Gâteau%20Belga." target="_blank" class="btn-order">Pedir ➔</a>
+            </div>
+        </div>
+
+        <!-- Caixa de Experiência Exclusiva -->
+        <div class="experience-box">
+            <p>✨ <b>Experiência Completa</b><br>Ambiente climatizado, som ambiente relaxante, carta de vinhos selecionados e atendimento exclusivo.</p>
+        </div>
+
+        <div class="footer">
+            Le Jardin Bistrô • Todos os direitos reservados
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
